@@ -1,7 +1,12 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+
+const itemRoute = require('./src/routes/item.route')
+
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
+app.use('/api/itens', itemRoute)
 
-app.listen(3000, () => {console.log('Aplicação rodando na porta 3000')})
+app.listen(process.env.PORT, () => {console.log('Aplicação rodando na porta 3000')}) 
