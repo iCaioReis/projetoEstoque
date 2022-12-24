@@ -1,4 +1,4 @@
-create = async function(req, res){
+const create = async function(req, res){
     res.send({ message: 'rota está funcionando'})
 }
 
