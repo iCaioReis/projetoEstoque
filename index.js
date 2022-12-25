@@ -8,7 +8,7 @@ const usuarioRoute = require('./src/routes/usuario.route')
 
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
-app.use('/api/itens', itemRoute)
 app.use('/api/usuario', usuarioRoute)
+app.use('/api/itens', itemRoute)
 
 app.listen(process.env.PORT, () => {console.log('Aplicação rodando na porta 3000')}) 
