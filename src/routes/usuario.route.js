@@ -1,9 +1,9 @@
 const express = require('express');
-const usuarioController = require('../controllers/usuario.controller');
 const router = express.Router();
-const usarioController = require('../controllers/usuario.controller');
+const usuarioController = require('../controllers/usuario.controller');
+const usuarioValidator = require ('../validators/usuario.validator')
 
-router.post('/', usuarioController.create);
+router.post('/', usuarioValidator.criar(), usuarioController.create);
 
 router.get('/', usuarioController.findAll);
 
