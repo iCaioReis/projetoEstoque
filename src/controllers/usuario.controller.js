@@ -32,8 +32,14 @@ const findAll = async function (req, res) {
     }
 }
 
-const findById = async function (req, res) {
+const findById = async function (req, res, next) {
     try {
+        const errors = validationResult(req);
+
+        if(!errors.isEmpty()){
+            throw createError(422, { errors: errors.array() })
+        }
+        
         const response = await usuarioService.findById(req.params.id);
         
         if(response && response.message) {

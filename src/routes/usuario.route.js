@@ -7,6 +7,6 @@ router.post('/', usuarioValidator.criar(), usuarioController.create);
 
 router.get('/', usuarioController.findAll);
 
-router.get('/:id', usuarioController.findById);
+router.get('/:id', usuarioValidator.findById(), usuarioController.findById);
 
 module.exports =  router;

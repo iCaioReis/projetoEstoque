@@ -1,4 +1,4 @@
-const { body } = require ('express-validator');
+const { body, param } = require ('express-validator');
 const { validatorMessage } = require('../utils/errorMessage');
 
 const criar = function (){
@@ -9,6 +9,13 @@ const criar = function (){
     ]
 }
 
+const findById = function (){
+    return [
+        param('id', validatorMessage('Id')).exists().bail().isInt()
+    ]  
+}
+
 module.exports = {
-    criar: criar
+    criar: criar,
+    findById: findById
 }
