@@ -9,6 +9,13 @@ const criar = function (){
     ]
 }
 
+const atualizar = function (){
+    return [
+        body('nome', validatorMessage('Nome')).exists().bail().isString(),
+        param('id', validatorMessage('Id')).exists().bail().isInt()
+    ]
+}
+
 const findById = function (){
     return [
         param('id', validatorMessage('Id')).exists().bail().isInt()
@@ -17,5 +24,6 @@ const findById = function (){
 
 module.exports = {
     criar: criar,
-    findById: findById
+    findById: findById,
+    atualizar: atualizar
 }

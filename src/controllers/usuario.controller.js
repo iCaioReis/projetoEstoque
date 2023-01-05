@@ -7,13 +7,13 @@ const create = async function (req, res, next) {
     try {
         const errors = validationResult(req);
 
-        if(!errors.isEmpty()){
+        if (!errors.isEmpty()) {
             throw createError(422, { errors: errors.array() })
         }
 
         const response = await usuarioService.create(req.body);
-        
-        if(response && response.message){
+
+        if (response && response.message) {
             throw response;
         }
         res.send(response);
@@ -21,6 +21,28 @@ const create = async function (req, res, next) {
         return next(error);
     }
 
+}
+
+const atualizar = async function (req, res, next) {
+    try {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            throw createError(422, { errors: errors.array() })
+        }
+
+        const response = await usuarioService.atualizar({
+            nome: req.body.nome
+        }, req.params.id)
+
+        if(response && response.message){
+            throw response;
+        }
+
+        res.send(response);
+    } catch (error) {
+        return next (error);
+    }
 }
 
 const findAll = async function (req, res) {
@@ -36,17 +58,17 @@ const findById = async function (req, res, next) {
     try {
         const errors = validationResult(req);
 
-        if(!errors.isEmpty()){
+        if (!errors.isEmpty()) {
             throw createError(422, { errors: errors.array() })
         }
-        
+
         const response = await usuarioService.findById(req.params.id);
-        
-        if(response && response.message) {
+
+        if (response && response.message) {
             throw response;
         }
         res.send(response)
-    }catch (error){
+    } catch (error) {
         next(error)
     }
 }
@@ -55,5 +77,6 @@ const findById = async function (req, res, next) {
 module.exports = {
     create: create,
     findAll: findAll,
-    findById: findById
+    findById: findById,
+    atualizar: atualizar
 }

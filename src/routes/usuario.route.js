@@ -9,4 +9,6 @@ router.get('/', usuarioController.findAll);
 
 router.get('/:id', usuarioValidator.findById(), usuarioController.findById);
 
+router.put('/:id', usuarioValidator.atualizar(), usuarioController.atualizar);
+
 module.exports =  router;

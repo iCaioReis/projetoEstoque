@@ -6,6 +6,12 @@ const create = async function(usuario){
     return usuarioCriado;
 }
 
+const atualizar = async function (usuario, id){
+    await Usuario.update(usuario,{
+        where: { id: id }
+    })
+}
+
 const findAll = async function(){
     const usuarios = await Usuario.findAll();
     return usuarios;
@@ -26,5 +32,6 @@ module.exports = {
     create: create,
     findAll: findAll,
     findById: findById,
-    findByWhere: findByWhere
+    findByWhere: findByWhere,
+    atualizar: atualizar
 }
