@@ -28,10 +28,16 @@ const findByWhere = async function (where){
     });
     return usuario
 }
+
+const deleteById = async function(id){
+    return await Usuario.destroy({ where: {id: id }})
+}
+
 module.exports = {
     create: create,
     findAll: findAll,
     findById: findById,
     findByWhere: findByWhere,
-    atualizar: atualizar
+    atualizar: atualizar,
+    deleteById: deleteById
 }

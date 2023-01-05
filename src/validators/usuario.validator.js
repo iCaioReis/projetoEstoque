@@ -22,8 +22,15 @@ const findById = function (){
     ]  
 }
 
+const deleteById = function (){
+    return [
+        param('id', validatorMessage('Id')).exists().bail().isInt()
+    ]  
+}
+
 module.exports = {
     criar: criar,
     findById: findById,
-    atualizar: atualizar
+    atualizar: atualizar,
+    deleteById: deleteById
 }

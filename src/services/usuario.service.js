@@ -40,9 +40,20 @@ const findById = async function(id){
     return usuario;
 }
 
+const deleteById = async function(id){
+    const usuario = await usuarioRepository.findById(id);
+    if(!usuario){
+        return createError(404, 'Usuário não encontrado');
+    }
+    await usuarioRepository.deleteById(id);
+    return usuario;
+}
+
+
 module.exports = {
     create: create,
     findAll: findAll,
     findById: findById,
-    atualizar: atualizar
+    atualizar: atualizar,
+    deleteById: deleteById
 }

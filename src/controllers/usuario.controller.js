@@ -73,10 +73,30 @@ const findById = async function (req, res, next) {
     }
 }
 
+const deleteById = async function (req, res, next) {
+    try {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            throw createError(422, { errors: errors.array() })
+        }
+
+        const response = await usuarioService.deleteById(req.params.id);
+
+        if (response && response.message) {
+            throw response;
+        }
+        res.send(response)
+    } catch (error) {
+        next(error)
+    }
+}
+
 
 module.exports = {
     create: create,
     findAll: findAll,
     findById: findById,
-    atualizar: atualizar
+    atualizar: atualizar,
+    deleteById: deleteById
 }

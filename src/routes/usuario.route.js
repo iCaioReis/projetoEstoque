@@ -11,4 +11,6 @@ router.get('/:id', usuarioValidator.findById(), usuarioController.findById);
 
 router.put('/:id', usuarioValidator.atualizar(), usuarioController.atualizar);
 
+router.delete('/:id', usuarioValidator.deleteById(), usuarioController.deleteById);
+
 module.exports =  router;
