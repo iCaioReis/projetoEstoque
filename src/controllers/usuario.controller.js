@@ -1,4 +1,3 @@
-const { response } = require('express');
 const { validationResult } = require('express-validator');
 const usuarioService = require('../services/usuario.service');
 const createError = require('http-errors');

@@ -1,4 +1,3 @@
-const db = require('../database/models/index')
 const { Usuario } = require('../database/models/index')
 
 const create = async function(usuario){
