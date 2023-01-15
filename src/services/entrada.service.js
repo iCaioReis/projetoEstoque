@@ -19,8 +19,8 @@ const create = async function(entrada){
 }
 
 const findAll = async function(){
-    const itens = await entradaRepository.encontrarTodos();
-    return itens;
+    const entrada = await entradaRepository.encontrarTodos();
+    return entrada;
 }
 
 const findById = async function(id){
