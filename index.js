@@ -17,7 +17,7 @@ app.use('/api/usuario', usuarioRoute)
 app.use('/api/itens', itemRoute)
 app.use('/api/entradas', entradaRoute)
 app.use('/api/saidas', saidaRoute)
-app.use('/api/itemreports' )
+app.use('/api/itemreports', itemreports)
 app.use(handle404Error)
 app.use(handleError)
  
