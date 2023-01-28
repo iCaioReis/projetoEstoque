@@ -10,7 +10,7 @@ const create = async function (req, res, next) {
             throw createError(422, { errors: errors.array() })
         }
 
-        const response = await fornecedorService.create({
+        const response = await fornecedorService.criar({
             nome: req.body.nome,
             email: req.body.email,
             telefone: req.body.telefone,
@@ -49,7 +49,7 @@ const atualizar = async function (req, res, next) {
 
 const findAll = async function (req, res) {
     try {
-        const response = await fornecedorService.findAll();
+        const response = await fornecedorService.encontrarTodos();
         res.send(response);
     } catch (error) {
         next(error)
@@ -64,7 +64,7 @@ const findById = async function (req, res, next) {
             throw createError(422, { errors: errors.array() })
         }
 
-        const response = await fornecedorService.findById(req.params.id);
+        const response = await fornecedorService.encontrarPorId(req.params.id);
 
         if (response && response.message) {
             throw response;
@@ -83,7 +83,7 @@ const deleteById = async function (req, res, next) {
             throw createError(422, { errors: errors.array() })
         }
 
-        const response = await fornecedorService.deleteById(req.params.id);
+        const response = await fornecedorService.deletar(req.params.id);
 
         if (response && response.message) {
             throw response;

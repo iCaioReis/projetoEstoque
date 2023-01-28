@@ -1,7 +1,7 @@
-const { Fornecedor } = require ('../database/models/fornecedor');
+const { Fornecedor } = require ('../database/models/index');
 
 const criar = async function(fornecedor){
-    const fornecedorCriado = await Fornecedor.criar(fornecedor);
+    const fornecedorCriado = await Fornecedor.create(fornecedor);
     return fornecedorCriado;
 }
 

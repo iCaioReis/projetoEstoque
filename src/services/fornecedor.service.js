@@ -49,5 +49,4 @@ module.exports = {
     encontrarTodos: encontrarTodos,
     encontrarPorId: encontrarPorId,
     deletar: deletar
-
 }
