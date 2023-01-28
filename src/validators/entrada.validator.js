@@ -5,7 +5,8 @@ const criar = function (){
     return [
         body('item_id', validatorMessage('Nome')).exists().bail().isInt(),
         body('quantidade', validatorMessage('Quantidade')).exists().bail().isInt(),
-        body('preco', validatorMessage('Preço')).exists().bail().isFloat()
+        body('preco', validatorMessage('Preço')).exists().bail().isFloat(),
+        body('fornecedor_id', validatorMessage('Fornecedor')).optional({ nullable: true }).isInt(),
     ]
 }
 

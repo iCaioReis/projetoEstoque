@@ -24,7 +24,7 @@ const findAll = async function(){
 }
 
 const findById = async function(id){
-    const entrada = await entradaRepository.encontrarPorId(id);
+    const entrada = await entradaRepository.encontrarPorWhere({id : id});
     if(!entrada){
         return createError(404, 'Entrada não encontrada');
     }

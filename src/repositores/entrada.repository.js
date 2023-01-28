@@ -1,4 +1,4 @@
-const { Entrada, Item, Usuario } = require('../database/models/index');
+const { Entrada, Item, Usuario, Fornecedor } = require('../database/models/index');
 
 const criar = async function (entrada){
     const entradaCriado = await Entrada.create(entrada);
@@ -20,6 +20,9 @@ const encontrarTodos = async function(){
         {
             model: Usuario,
             as: 'usuario'
+        },{
+            model: Fornecedor,
+            as: 'fornecedor'
         }]
     });
     return itens;
@@ -47,6 +50,9 @@ const deletar = async function(id){
         {
             model: Usuario,
             as: 'usuario'
+        },{
+            model: Fornecedor,
+            as: 'fornecedor'
         }]
     });
 
