@@ -1,5 +1,4 @@
-# projetoEstoque
-
+# API REST-Full Estoque
     => Projeto criado para fins de estudo onde foi feita uma API REST-Full usando node, express, mySql como principais tecnologias.
 
 Estrutura do projeto
