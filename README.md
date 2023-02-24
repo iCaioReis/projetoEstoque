@@ -11,9 +11,9 @@ index.js declara as rotas e utiliza os arquivos do diretório  ./src/routes
 
 A camada de rotas utiliza da camada de controlador (controller) e validadores (validators) e o middleware autorizator
 
- Autorizator: Camada responsável por validar se o usuário está ou não logado
+Autorizator: Camada responsável por validar se o usuário está ou não logado
 
- Validator: Camada responsável por validar se as informações enviadas do front-end estão "corretas"
+Validator: Camada responsável por validar se as informações enviadas do front-end estão "corretas"
 
 Controller: Camada de regra de negócios, onde são feitas validações e tratamento de dados e manda informações para camada services
 
