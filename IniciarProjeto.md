@@ -6,7 +6,7 @@ npm i --save-dev sequelize-cli
 ## Estrutura de pastas
     => src
         => controllers
-        => dataabase
+        => database
         => middlewares
         => repositories
         => routes
@@ -22,7 +22,28 @@ npm i dotenv
 
 //Criar o banco de dados mysql
 ## Na pasta Database 
-npm i sequelize cli init 
+npx sequelize-cli init 
 
 //Deletar o config.json e criar um config.js
 //Entrar no arquivo index.js em models e trocar o import de config.json para config.js
+
+## Criar Migration
+
+//Na raiz do projeto 
+    npx sequelize-cli model:generate --name usuario(Nome da Tabela) --attributes login:string,senha:string (Atributos e seus tipos)
+
+## Configurar Migration
+
+//Colocar allowNull nos atributos necessários
+//Colocar do deletedAt
+
+deletedAt:{
+    allowNull: true,
+    type: Sequelize.DATE
+}
+
+=> No arquivo de models colocar o tablename
+
+## Rodar Migrations 
+
+npx sequelize-cli db:migrate
