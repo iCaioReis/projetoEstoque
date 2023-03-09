@@ -20,3 +20,5 @@ Controller: Camada de regra de negócios, onde são feitas validações e tratam
 A camada de services por sua vez também faz suas validações e utiliza da camada de repository
 
 Passado então por todas as camadas, a camada de repository realiza a operação da rota, utilizando a camada de models
+
+Repository => Service => Controller => Routes => index
