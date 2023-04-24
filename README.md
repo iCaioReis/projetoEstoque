@@ -21,4 +21,4 @@ A camada de services por sua vez também faz suas validações e utiliza da cama
 
 Passado então por todas as camadas, a camada de repository realiza a operação da rota, utilizando a camada de models
 
-Repository => Service => Controller => Routes => index
+Repository => Service => Controller + Validator => Routes => index
